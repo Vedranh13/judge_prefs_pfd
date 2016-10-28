@@ -61,9 +61,10 @@ angular.module('starter.controllers', ['firebase','ionic'])
       });
 
       var ref = new Firebase("https://judge-prefs-pfd.firebaseio.com/user_uploads");
-      if ((judge.comments === null) || (judge.comments === "")) {
+      if ((judge.comments === undefined) || (judge.comments === "")) {
         judge.comments = "-1";
       }
+
       judge.fullName = name;
       judge.firstName = null;
       judge.lastName = null;
@@ -145,9 +146,14 @@ angular.module('starter.controllers', ['firebase','ionic'])
 
     $scope.numReviews = $rootScope.result.numReviews;
 
-    $scope.speed = Math.round($rootScope.result.speed);
-    $scope.rating = Math.round($rootScope.result.rating);
-    $scope.aff_wr = Math.round($rootScope.result.aff_wr * 100);
+    var t = $scope.numReviews;
+    if (t === 0) {
+      t = 1;
+    }
+
+    $scope.speed = Math.round($rootScope.result.speed / t);
+    $scope.rating = Math.round($rootScope.result.rating / t);
+    $scope.aff_wr = Math.round($rootScope.result.aff_wr  / t * 100);
 
     if ($rootScope.result.numReviews === 0) {
       $scope.neg_wr = 0;
@@ -167,20 +173,20 @@ angular.module('starter.controllers', ['firebase','ionic'])
     $scope.theory = {};
     $scope.rebuttal = {};
 
-    $scope.extinction.yes = Math.round($rootScope.result.extinction.yes * 100);
-    $scope.extinction.no = Math.round($rootScope.result.extinction.no * 100);
-    $scope.extinction.idk = Math.round($rootScope.result.extinction.idk * 100);
+    $scope.extinction.yes = Math.round($rootScope.result.extinction.yes / t * 100);
+    $scope.extinction.no = Math.round($rootScope.result.extinction.no / t * 100);
+    $scope.extinction.idk = Math.round($rootScope.result.extinction.idk / t * 100);
 
-    $scope.kritiks.yes = Math.round($rootScope.result.kritiks.yes * 100);
-    $scope.kritiks.no = Math.round($rootScope.result.kritiks.no * 100);
-    $scope.kritiks.idk = Math.round($rootScope.result.kritiks.idk * 100);
+    $scope.kritiks.yes = Math.round($rootScope.result.kritiks.yes / t * 100);
+    $scope.kritiks.no = Math.round($rootScope.result.kritiks.no / t * 100);
+    $scope.kritiks.idk = Math.round($rootScope.result.kritiks.idk / t * 100);
 
-    $scope.theory.yes = Math.round($rootScope.result.theory.yes * 100);
-    $scope.theory.no = Math.round($rootScope.result.theory.no * 100);
-    $scope.theory.idk = Math.round($rootScope.result.theory.idk * 100);
+    $scope.theory.yes = Math.round($rootScope.result.theory.yes / t * 100);
+    $scope.theory.no = Math.round($rootScope.result.theory.no / t * 100);
+    $scope.theory.idk = Math.round($rootScope.result.theory.idk / t * 100);
 
-    $scope.rebuttal.yes = Math.round($rootScope.result.rebuttal.yes * 100);
-    $scope.rebuttal.no = Math.round($rootScope.result.rebuttal.no * 100);
-    $scope.rebuttal.idk = Math.round($rootScope.result.rebuttal.idk * 100);
+    $scope.rebuttal.yes = Math.round($rootScope.result.rebuttal.yes / t * 100);
+    $scope.rebuttal.no = Math.round($rootScope.result.rebuttal.no / t * 100);
+    $scope.rebuttal.idk = Math.round($rootScope.result.rebuttal.idk / t * 100);
 
 });
