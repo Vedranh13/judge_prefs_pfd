@@ -15,37 +15,14 @@
 
       <ion-list>
           <ion-item class="bar bar-header bar-royal">
-            <h1 class="title">Speed Preference:</h1>
+            <h1 class="title">Overall Rating:</h1>
           </ion-item>
           <div class="list">
             <div class="item range range-positive">
-              <input type="range" min="0" max="10" ng-model="judge.speedPref">
-              <ion-label> {{judge.speedPref}} out of 10</ion-label>
+              <input type="range" min="0" max="10" ng-model="judge.rating">
+              <ion-label> {{judge.rating}} out of 10</ion-label>
             </div>
           </div>
-      </ion-list>
-
-      <ion-list radio-group>
-        <ion-item class="bar bar-header bar-royal">
-          <h1 class="title">Affirmative Type:</h1>
-        </ion-item>
-        <ion-item>
-          <ion-radio ng-model="judge.aff_type" name="aff_group" value="aff_trad">Traditional Aff</ion-radio>
-          <ion-radio ng-model="judge.aff_type" name="aff_group" value="aff_k">Kritikal Aff</ion-radio>
-        </ion-item>
-      </ion-list>
-
-      <ion-list radio-group>
-        <ion-item class="bar bar-header bar-royal">
-          <h1 class="title">2NR Choice:</h1>
-        </ion-item>
-        <ion-item>
-          <ion-radio ng-model="judge.neg_choice" name="2nr_group" value="t">Topicality</ion-radio>
-          <ion-radio ng-model="judge.neg_choice" name="2nr_group" value="k">Kritik</ion-radio>
-          <ion-radio ng-model="judge.neg_choice" name="2nr_group" value="cp">Counterplan</ion-radio>
-          <ion-radio ng-model="judge.neg_choice" name="2nr_group" value="da">Disadvantage</ion-radio>
-          <ion-radio ng-model="judge.neg_choice" name="2nr_group" value="it">Impact Turn</ion-radio>
-        </ion-item>
       </ion-list>
 
       <ion-list radio-group>
@@ -53,9 +30,73 @@
           <h1 class="title">Winner:</h1>
         </ion-item>
         <ion-item>
-          <ion-radio ng-model="judge.winner" name="decision_group" value="aff_win">Affirmative</ion-radio>
-          <ion-radio ng-model="judge.winner" name="decision_group" value="neg_win">Negative</ion-radio>
+          <ion-radio ng-model="judge.winner" name="win" value="pro">Pro</ion-radio>
+          <ion-radio ng-model="judge.winner" name="win" value="con">Con</ion-radio>
         </ion-item>
+      </ion-list>
+
+      <ion-list radio-group>
+        <ion-item class="bar bar-header bar-royal">
+          <h1 class="title">Extinction Scenarios?</h1>
+        </ion-item>
+        <ion-item>
+          <h3 class="item-text-wrap">Does the judge like extinction scenarios?</h3>
+          <h3 class="item-text-wrap"></h3>
+          <ion-radio ng-model="judge.extinction" name="ext" value="yes">Yes</ion-radio>
+          <ion-radio ng-model="judge.extinction" name="ext" value="no">No</ion-radio>
+          <ion-radio ng-model="judge.extinction" name="ext" value="idk">I don't know</ion-radio>
+        </ion-item>
+      </ion-list>
+
+      <ion-list radio-group>
+        <ion-item class="bar bar-header bar-royal">
+          <h1 class="title">Kritiks?</h1>
+        </ion-item>
+        <ion-item>
+          <h3 class="item-text-wrap">Does the judge like kritiks?</h3>
+          <h3 class="item-text-wrap"></h3>
+          <ion-radio ng-model="judge.kritiks" name="kritik" value="yes">Yes</ion-radio>
+          <ion-radio ng-model="judge.kritiks" name="kritik" value="no">No</ion-radio>
+          <ion-radio ng-model="judge.kritiks" name="kritik" value="idk">I don't know</ion-radio>
+        </ion-item>
+      </ion-list>
+
+      <ion-list radio-group>
+        <ion-item class="bar bar-header bar-royal">
+          <h1 class="title">Theory?</h1>
+        </ion-item>
+        <ion-item>
+          <h3 class="item-text-wrap">Does the judge like theory?</h3>
+          <h3 class="item-text-wrap"></h3>
+          <ion-radio ng-model="judge.theory" name="theory" value="yes">Yes</ion-radio>
+          <ion-radio ng-model="judge.theory" name="theory" value="no">No</ion-radio>
+          <ion-radio ng-model="judge.theory" name="theory" value="idk">I don't know</ion-radio>
+        </ion-item>
+      </ion-list>
+
+      <ion-list radio-group>
+        <ion-item class="bar bar-header bar-royal">
+          <h1 class="title">Rebuttals?</h1>
+        </ion-item>
+        <ion-item>
+          <h3 class="item-text-wrap">Should the second rebuttal cover the first?</h3>
+          <h3 class="item-text-wrap"></h3>
+          <ion-radio ng-model="judge.rebuttal" name="rebuttal" value="yes">Yes</ion-radio>
+          <ion-radio ng-model="judge.rebuttal" name="rebuttal" value="no">No</ion-radio>
+          <ion-radio ng-model="judge.rebuttal" name="rebuttal" value="idk">I don't know</ion-radio>
+        </ion-item>
+      </ion-list>
+
+      <ion-list>
+          <ion-item class="bar bar-header bar-royal">
+            <h1 class="title">Speed Preference:</h1>
+          </ion-item>
+          <div class="list">
+            <div class="item range range-positive">
+              <input type="range" min="0" max="10" ng-model="judge.speed">
+              <ion-label> {{judge.speed}} out of 10</ion-label>
+            </div>
+          </div>
       </ion-list>
 
       <ion-list>
@@ -67,7 +108,7 @@
         </ion-item>
 
       <button ng-click="rrNext(judge)" class="button button-block button-positive">
-        Next
+        Submit
       </button>
 
     </ion-content>

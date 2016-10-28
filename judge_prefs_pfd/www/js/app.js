@@ -57,30 +57,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         controller: "submitRoundReportCtrl"
       })
 
-  .state('rr-t', {
-        url: "/rr-t",
-        templateUrl: "templates/rr-t.html",
-        controller: "rr-Ctrl"
-      })
-
-  .state('rr-k', {
-        url: "/rr-k",
-        templateUrl: "templates/rr-k.html",
-        controller: "rr-Ctrl"
-      })
-
-  .state('rr-cp', {
-        url: "/rr-cp",
-        templateUrl: "templates/rr-cp.html",
-        controller: "rr-Ctrl"
-      })
-
-  .state('rr-da', {
-        url: "/rr-da",
-        templateUrl: "templates/rr-da.html",
-        controller: "rr-Ctrl"
-      })
-
   .state('search', {
         url: "/search",
         templateUrl: "templates/search.html",
