@@ -61,13 +61,13 @@ angular.module('starter.controllers', ['firebase','ionic'])
       });
 
       var ref = new Firebase("https://judge-prefs-pfd.firebaseio.com/user_uploads");
-      if ((judge.comments === undefined) || (judge.comments === "")) {
-        judge.comments = "-1";
-      }
 
       judge.fullName = name;
       judge.firstName = null;
       judge.lastName = null;
+      if ((judge.comments === undefined) || (judge.comments === "")) {
+        judge.comments = "-1";
+      }
       ref.push(judge);
 
       $ionicHistory.goBack(-1);
