@@ -1,0 +1,36 @@
+<ion-view view-title="Home">
+  <ion-content controller="homeCtrl" class="padding">
+      <div class="row">
+        <div class="col">
+          <div class="text-center">
+              <h3 style="text-align: center;">Welcome to</h3>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="text-center">
+              <h1 style="text-align: center;">Judge Prefs!</h1>
+          </div>
+        </div>
+      </div>
+
+      <img src="img/judgeprefslogo.png" class="center" height="250" width="250"></img>
+
+      <div class="row">
+        <div class="col">
+          <div class="text-center">
+              <h4 style="text-align: center;">
+                Use the buttons to search for judges and submit round reports.
+              </h4>
+          </div>
+        </div>
+      </div>
+      <button ng-click="submitRoundReport()" class="button button-block button-royal">
+        Submit Round Report
+      </button>
+      <button ng-click="searchJudges()" class="button button-block button-positive">
+        Search Judges
+      </button>
+  </ion-content>
+</ion-view>

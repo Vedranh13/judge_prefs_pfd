@@ -1,7 +1,7 @@
 {
-  "name": "judge_prefs_pfd",
+  "name": "judge_prefs",
   "version": "1.1.1",
-  "description": "judge_prefs_pfd: An Ionic project",
+  "description": "judge_prefs: An Ionic project",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
