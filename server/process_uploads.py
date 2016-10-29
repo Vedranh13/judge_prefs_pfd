@@ -1,6 +1,6 @@
 import pyrebase #import pyrebase
 import datetime #import datetime
-import time #importt time
+import time #import time
 
 config = { #sets up judge-prefs-pfd firebase
   "apiKey": "apiKey",
@@ -72,7 +72,7 @@ for upload in db.child('user_uploads').get().each(): #iterates over database of 
         elif (upload.val()['kritiks'] == "idk"):
             new['kritiks']['idk'] = jold.val()['kritiks']['idk'] + 1
             new['kritiks']['yes'] = jold.val()['kritiks']['yes']
-            new['kritiks']['yes'] = jold.val()['kritiks']['yes']
+            new['kritiks']['no'] = jold.val()['kritiks']['no']
 
         if (upload.val()['theory'] == "yes"):
             new['theory']['yes'] = jold.val()['theory']['yes'] + 1
