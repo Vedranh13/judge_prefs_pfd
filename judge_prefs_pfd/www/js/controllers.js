@@ -218,7 +218,7 @@ angular.module('starter.controllers', ['firebase','ionic'])
             var temp = {};
             temp.comment = childSnapshot.child("comments").val();
             var timestamp = childSnapshot.child('timestamp').val();
-            temp.timestamp = $filter('date')(new Date(timestamp), 'M-d-yyyy');
+            temp.timestamp = timestamp.slice(5, 7) + "-" + timestamp.slice(8, 10) + "-" + timestamp.slice(0, 4);
             comments[key] = temp;
           });
           console.log(comments);

@@ -25,6 +25,8 @@ for upload in db.child('user_uploads').get().each(): #iterates over database of 
 
     if (jid != "doesnotexist"): #only processes if judge exists
 
+        print(jid);
+
         jold = firebase.database().child('judges').child(jid).get() #downloads judge
 
         if (upload.val()['comments'] != "-1"):

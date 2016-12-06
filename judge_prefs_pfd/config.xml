@@ -1,5 +1,5 @@
-<?xml version="1.5" encoding="UTF-8" standalone="yes"?>
-<widget id="bdinakar.judgeprefspfd" version="1.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<?xml version="2.0" encoding="UTF-8" standalone="yes"?>
+<widget id="bdinakar.judgeprefspfd" version="2.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Judge Prefs PFD</name>
   <description>
         An easy way to know what public forum debate arguments to read based on the judge.
